@@ -1,0 +1,246 @@
+digraph gocallvis {
+    label="kratos-demo/cmd/kratos-demo";
+    labeljust="l";
+    fontname="Arial";
+    fontsize="14";
+    rankdir="LR";
+    bgcolor="lightgray";
+    style="solid";
+    penwidth="0.5";
+    pad="0.0";
+    nodesep="0.35";
+
+    node [shape="box" style="filled,rounded" fillcolor="honeydew" fontname="Verdana" penwidth="1.0" margin="0.05,0.0"];
+    edge [minlen="2"]
+
+    subgraph "cluster_focus" {
+        bgcolor="#e6ecfa";
+label="main";
+labelloc="t";
+labeljust="c";
+fontsize="18";
+        
+        "kratos-demo/cmd/kratos-demo.wireApp$1" [ label="wireApp$1" style="dotted,filled" tooltip="kratos-demo/cmd/kratos-demo.wireApp$1 | defined in wire_gen.go:37\nat wire_gen.go:38: calling [kratos-demo/internal/data.NewData$1]" fillcolor="lightblue" ]
+        "kratos-demo/cmd/kratos-demo.wireApp" [ fillcolor="lightblue" label="wireApp" penwidth="0.5" tooltip="kratos-demo/cmd/kratos-demo.wireApp | defined in wire_gen.go:26\nat wire_gen.go:34: calling [kratos-demo/internal/server.NewGRPCServer]\nat wire_gen.go:35: calling [kratos-demo/internal/server.NewHTTPServer]\nat wire_gen.go:33: calling [kratos-demo/internal/service.NewGreeterService]\nat wire_gen.go:31: calling [kratos-demo/internal/data.NewGreeterRepo]\nat wire_gen.go:36: calling [kratos-demo/cmd/kratos-demo.newApp]\nat wire_gen.go:27: calling [kratos-demo/internal/data.NewData]\nat wire_gen.go:32: calling [kratos-demo/internal/biz.NewGreeterUsecase]" ]
+        "kratos-demo/cmd/kratos-demo.newApp" [ tooltip="kratos-demo/cmd/kratos-demo.newApp | defined in main.go:36\nat main.go:43: calling [github.com/go-kratos/kratos/v2.Server]\nat main.go:39: calling [github.com/go-kratos/kratos/v2.Name]\nat main.go:40: calling [github.com/go-kratos/kratos/v2.Version]\nat main.go:37: calling [github.com/go-kratos/kratos/v2.New]\nat main.go:42: calling [github.com/go-kratos/kratos/v2.Logger]\nat main.go:38: calling [github.com/go-kratos/kratos/v2.ID]\nat main.go:41: calling [github.com/go-kratos/kratos/v2.Metadata]" fillcolor="lightblue" label="newApp" penwidth="0.5" ]
+        "kratos-demo/cmd/kratos-demo.main" [ fillcolor="lightblue" label="main" penwidth="0.5" tooltip="kratos-demo/cmd/kratos-demo.main | defined in main.go:50\nat main.go:84: calling [(*github.com/go-kratos/kratos/v2.App).Run]\nat main.go:52: calling [github.com/go-kratos/kratos/v2/log.With]\nat main.go:68: calling [(*github.com/go-kratos/kratos/v2/config.config).Load]\nat main.go:59: calling [github.com/go-kratos/kratos/v2/middleware/tracing.SpanID]\nat main.go:61: calling [github.com/go-kratos/kratos/v2/config.New]\nat main.go:52: calling [github.com/go-kratos/kratos/v2/log.NewStdLogger]\nat main.go:66: calling [(*github.com/go-kratos/kratos/v2/config.config).Close]\nat main.go:81: calling [kratos-demo/cmd/kratos-demo.wireApp$1]\nat main.go:63: calling [github.com/go-kratos/kratos/v2/config/file.NewSource]\nat main.go:62: calling [github.com/go-kratos/kratos/v2/config.WithSource]\nat main.go:77: calling [kratos-demo/cmd/kratos-demo.wireApp]\nat main.go:73: calling [(*github.com/go-kratos/kratos/v2/config.config).Scan]\nat main.go:51: calling [flag.Parse]\nat main.go:58: calling [github.com/go-kratos/kratos/v2/middleware/tracing.TraceID]" ]
+        "kratos-demo/cmd/kratos-demo.init" [ penwidth="0.5" tooltip="kratos-demo/cmd/kratos-demo.init | defined in .:0\nat .:0: calling [kratos-demo/cmd/kratos-demo.init#1]\nat main.go:29: calling [os.Hostname]" fillcolor="lightblue" label="init" ]
+        "kratos-demo/cmd/kratos-demo.init#1" [ tooltip="kratos-demo/cmd/kratos-demo.init#1 | defined in main.go:32\nat main.go:33: calling [flag.StringVar]" fillcolor="lightblue" label="init#1" penwidth="0.5" ]
+        
+        subgraph "cluster_flag" {
+        label="flag";
+tooltip="package: flag";
+fontsize="16";
+fillcolor="#E0FFE1";
+fontname="Tahoma bold";
+URL="/?f=flag";
+penwidth="0.8";
+style="filled";
+rank="sink";
+        
+        "flag.Parse" [ fillcolor="#adedad" label="Parse" penwidth="1.5" tooltip="flag.Parse | defined in flag.go:1186" ]
+        "flag.StringVar" [ tooltip="flag.StringVar | defined in flag.go:884" fillcolor="#adedad" label="StringVar" penwidth="1.5" ]
+        
+    }
+
+        subgraph "cluster_github.com/go-kratos/kratos/v2" {
+        fontname="Tahoma bold";
+rank="sink";
+fillcolor="lightyellow";
+fontsize="16";
+style="filled";
+label="kratos";
+URL="/?f=github.com/go-kratos/kratos/v2";
+tooltip="package: github.com/go-kratos/kratos/v2";
+penwidth="0.8";
+        
+        "github.com/go-kratos/kratos/v2.ID" [ penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.ID | defined in options.go:42" fillcolor="moccasin" label="ID" ]
+        "github.com/go-kratos/kratos/v2.Name" [ penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.Name | defined in options.go:47" fillcolor="moccasin" label="Name" ]
+        "github.com/go-kratos/kratos/v2.Version" [ fillcolor="moccasin" label="Version" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.Version | defined in options.go:52" ]
+        "github.com/go-kratos/kratos/v2.Metadata" [ fillcolor="moccasin" label="Metadata" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.Metadata | defined in options.go:57" ]
+        "github.com/go-kratos/kratos/v2.Logger" [ fillcolor="moccasin" label="Logger" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.Logger | defined in options.go:72" ]
+        "github.com/go-kratos/kratos/v2.Server" [ fillcolor="moccasin" label="Server" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.Server | defined in options.go:77" ]
+        "github.com/go-kratos/kratos/v2.New" [ fillcolor="moccasin" label="New" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2.New | defined in app.go:39" ]
+        "(*github.com/go-kratos/kratos/v2.App).Run" [ penwidth="1.5" tooltip="(*github.com/go-kratos/kratos/v2.App).Run | defined in app.go:84" fillcolor="moccasin" label="(*App).Run" ]
+        
+    }
+
+        subgraph "cluster_github.com/go-kratos/kratos/v2/config" {
+        penwidth="0.8";
+fontsize="16";
+rank="sink";
+URL="/?f=github.com/go-kratos/kratos/v2/config";
+tooltip="package: github.com/go-kratos/kratos/v2/config";
+style="filled";
+fillcolor="lightyellow";
+fontname="Tahoma bold";
+label="config";
+        
+        "github.com/go-kratos/kratos/v2/config.WithSource" [ fillcolor="moccasin" label="WithSource" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/config.WithSource | defined in options.go:28" ]
+        "github.com/go-kratos/kratos/v2/config.New" [ fillcolor="moccasin" label="New" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/config.New | defined in config.go:48" ]
+        "(*github.com/go-kratos/kratos/v2/config.config).Close" [ penwidth="1.5" tooltip="(*github.com/go-kratos/kratos/v2/config.config).Close | defined in config.go:151" fillcolor="moccasin" label="(*config).Close" ]
+        "(*github.com/go-kratos/kratos/v2/config.config).Load" [ label="(*config).Load" penwidth="1.5" tooltip="(*github.com/go-kratos/kratos/v2/config.config).Load | defined in config.go:96" fillcolor="moccasin" ]
+        "(*github.com/go-kratos/kratos/v2/config.config).Scan" [ fillcolor="moccasin" label="(*config).Scan" penwidth="1.5" tooltip="(*github.com/go-kratos/kratos/v2/config.config).Scan | defined in config.go:135" ]
+        
+    }
+
+        subgraph "cluster_github.com/go-kratos/kratos/v2/config/file" {
+        fillcolor="lightyellow";
+rank="sink";
+label="file";
+URL="/?f=github.com/go-kratos/kratos/v2/config/file";
+tooltip="package: github.com/go-kratos/kratos/v2/config/file";
+penwidth="0.8";
+fontsize="16";
+style="filled";
+fontname="Tahoma bold";
+        
+        "github.com/go-kratos/kratos/v2/config/file.NewSource" [ tooltip="github.com/go-kratos/kratos/v2/config/file.NewSource | defined in file.go:19" fillcolor="moccasin" label="NewSource" penwidth="1.5" ]
+        
+    }
+
+        subgraph "cluster_github.com/go-kratos/kratos/v2/log" {
+        penwidth="0.8";
+fontsize="16";
+fontname="Tahoma bold";
+label="log";
+tooltip="package: github.com/go-kratos/kratos/v2/log";
+style="filled";
+fillcolor="lightyellow";
+rank="sink";
+URL="/?f=github.com/go-kratos/kratos/v2/log";
+        
+        "github.com/go-kratos/kratos/v2/log.NewStdLogger" [ penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/log.NewStdLogger | defined in std.go:19" fillcolor="moccasin" label="NewStdLogger" ]
+        "github.com/go-kratos/kratos/v2/log.With" [ fillcolor="moccasin" label="With" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/log.With | defined in log.go:34" ]
+        
+    }
+
+        subgraph "cluster_github.com/go-kratos/kratos/v2/middleware/tracing" {
+        style="filled";
+tooltip="package: github.com/go-kratos/kratos/v2/middleware/tracing";
+fillcolor="lightyellow";
+fontname="Tahoma bold";
+rank="sink";
+label="tracing";
+URL="/?f=github.com/go-kratos/kratos/v2/middleware/tracing";
+penwidth="0.8";
+fontsize="16";
+        
+        "github.com/go-kratos/kratos/v2/middleware/tracing.TraceID" [ fillcolor="moccasin" label="TraceID" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/middleware/tracing.TraceID | defined in tracing.go:79" ]
+        "github.com/go-kratos/kratos/v2/middleware/tracing.SpanID" [ fillcolor="moccasin" label="SpanID" penwidth="1.5" tooltip="github.com/go-kratos/kratos/v2/middleware/tracing.SpanID | defined in tracing.go:89" ]
+        
+    }
+
+        subgraph "cluster_kratos-demo/internal/biz" {
+        fontsize="16";
+fillcolor="lightyellow";
+tooltip="package: kratos-demo/internal/biz";
+penwidth="0.8";
+fontname="Tahoma bold";
+rank="sink";
+label="biz";
+URL="/?f=kratos-demo/internal/biz";
+style="filled";
+        
+        "kratos-demo/internal/biz.NewGreeterUsecase" [ fillcolor="moccasin" label="NewGreeterUsecase" penwidth="1.5" tooltip="kratos-demo/internal/biz.NewGreeterUsecase | defined in greeter.go:38" ]
+        
+    }
+
+        subgraph "cluster_kratos-demo/internal/data" {
+        label="data";
+URL="/?f=kratos-demo/internal/data";
+style="filled";
+fontsize="16";
+fillcolor="lightyellow";
+fontname="Tahoma bold";
+rank="sink";
+tooltip="package: kratos-demo/internal/data";
+penwidth="0.8";
+        
+        "kratos-demo/internal/data.NewData$1" [ fillcolor="moccasin" label="NewData$1" style="dotted,filled" tooltip="kratos-demo/internal/data.NewData$1 | defined in data.go:20" ]
+        "kratos-demo/internal/data.NewData" [ fillcolor="moccasin" label="NewData" penwidth="1.5" tooltip="kratos-demo/internal/data.NewData | defined in data.go:19" ]
+        "kratos-demo/internal/data.NewGreeterRepo" [ fillcolor="moccasin" label="NewGreeterRepo" penwidth="1.5" tooltip="kratos-demo/internal/data.NewGreeterRepo | defined in greeter.go:17" ]
+        
+    }
+
+        subgraph "cluster_kratos-demo/internal/server" {
+        fontname="Tahoma bold";
+rank="sink";
+label="server";
+tooltip="package: kratos-demo/internal/server";
+penwidth="0.8";
+fontsize="16";
+style="filled";
+fillcolor="lightyellow";
+URL="/?f=kratos-demo/internal/server";
+        
+        "kratos-demo/internal/server.NewGRPCServer" [ fillcolor="moccasin" label="NewGRPCServer" penwidth="1.5" tooltip="kratos-demo/internal/server.NewGRPCServer | defined in grpc.go:14" ]
+        "kratos-demo/internal/server.NewHTTPServer" [ label="NewHTTPServer" penwidth="1.5" tooltip="kratos-demo/internal/server.NewHTTPServer | defined in http.go:14" fillcolor="moccasin" ]
+        
+    }
+
+        subgraph "cluster_kratos-demo/internal/service" {
+        style="filled";
+fillcolor="lightyellow";
+rank="sink";
+URL="/?f=kratos-demo/internal/service";
+tooltip="package: kratos-demo/internal/service";
+penwidth="0.8";
+fontsize="16";
+fontname="Tahoma bold";
+label="service";
+        
+        "kratos-demo/internal/service.NewGreeterService" [ fillcolor="moccasin" label="NewGreeterService" penwidth="1.5" tooltip="kratos-demo/internal/service.NewGreeterService | defined in greeter.go:18" ]
+        
+    }
+
+        subgraph "cluster_os" {
+        fontsize="16";
+style="filled";
+rank="sink";
+label="os";
+tooltip="package: os";
+penwidth="0.8";
+fillcolor="#E0FFE1";
+fontname="Tahoma bold";
+URL="/?f=os";
+        
+        "os.Hostname" [ fillcolor="#adedad" label="Hostname" penwidth="1.5" tooltip="os.Hostname | defined in sys.go:8" ]
+        
+    }
+
+    }
+
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/server.NewGRPCServer" [ color="saddlebrown" tooltip="at wire_gen.go:34: calling [kratos-demo/internal/server.NewGRPCServer]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "(*github.com/go-kratos/kratos/v2.App).Run" [ color="saddlebrown" tooltip="at main.go:84: calling [(*github.com/go-kratos/kratos/v2.App).Run]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/server.NewHTTPServer" [ color="saddlebrown" tooltip="at wire_gen.go:35: calling [kratos-demo/internal/server.NewHTTPServer]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/log.With" [ color="saddlebrown" tooltip="at main.go:52: calling [github.com/go-kratos/kratos/v2/log.With]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "(*github.com/go-kratos/kratos/v2/config.config).Load" [ style="dashed" color="saddlebrown" tooltip="at main.go:68: calling [(*github.com/go-kratos/kratos/v2/config.config).Load]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp$1" -> "kratos-demo/internal/data.NewData$1" [ style="dashed" color="saddlebrown" tooltip="at wire_gen.go:38: calling [kratos-demo/internal/data.NewData$1]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.Server" [ color="saddlebrown" tooltip="at main.go:43: calling [github.com/go-kratos/kratos/v2.Server]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/service.NewGreeterService" [ color="saddlebrown" tooltip="at wire_gen.go:33: calling [kratos-demo/internal/service.NewGreeterService]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.Name" [ color="saddlebrown" tooltip="at main.go:39: calling [github.com/go-kratos/kratos/v2.Name]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.Version" [ color="saddlebrown" tooltip="at main.go:40: calling [github.com/go-kratos/kratos/v2.Version]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/middleware/tracing.SpanID" [ tooltip="at main.go:59: calling [github.com/go-kratos/kratos/v2/middleware/tracing.SpanID]" color="saddlebrown" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/config.New" [ color="saddlebrown" tooltip="at main.go:61: calling [github.com/go-kratos/kratos/v2/config.New]" ]
+    "kratos-demo/cmd/kratos-demo.init" -> "kratos-demo/cmd/kratos-demo.init#1" [ tooltip="at .:0: calling [kratos-demo/cmd/kratos-demo.init#1]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/data.NewGreeterRepo" [ color="saddlebrown" tooltip="at wire_gen.go:31: calling [kratos-demo/internal/data.NewGreeterRepo]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.New" [ tooltip="at main.go:37: calling [github.com/go-kratos/kratos/v2.New]" color="saddlebrown" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/cmd/kratos-demo.newApp" [ tooltip="at wire_gen.go:36: calling [kratos-demo/cmd/kratos-demo.newApp]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/log.NewStdLogger" [ color="saddlebrown" tooltip="at main.go:52: calling [github.com/go-kratos/kratos/v2/log.NewStdLogger]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "(*github.com/go-kratos/kratos/v2/config.config).Close" [ style="dashed" arrowhead="normalnoneodiamond" color="saddlebrown" tooltip="at main.go:66: calling [(*github.com/go-kratos/kratos/v2/config.config).Close]" ]
+    "kratos-demo/cmd/kratos-demo.init#1" -> "flag.StringVar" [ color="saddlebrown" tooltip="at main.go:33: calling [flag.StringVar]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.Logger" [ color="saddlebrown" tooltip="at main.go:42: calling [github.com/go-kratos/kratos/v2.Logger]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "kratos-demo/cmd/kratos-demo.wireApp$1" [ style="dashed" arrowhead="normalnoneodiamond" tooltip="at main.go:81: calling [kratos-demo/cmd/kratos-demo.wireApp$1]" ]
+    "kratos-demo/cmd/kratos-demo.init" -> "os.Hostname" [ color="saddlebrown" tooltip="at main.go:29: calling [os.Hostname]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/data.NewData" [ color="saddlebrown" tooltip="at wire_gen.go:27: calling [kratos-demo/internal/data.NewData]" ]
+    "kratos-demo/cmd/kratos-demo.wireApp" -> "kratos-demo/internal/biz.NewGreeterUsecase" [ color="saddlebrown" tooltip="at wire_gen.go:32: calling [kratos-demo/internal/biz.NewGreeterUsecase]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/config/file.NewSource" [ color="saddlebrown" tooltip="at main.go:63: calling [github.com/go-kratos/kratos/v2/config/file.NewSource]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/config.WithSource" [ color="saddlebrown" tooltip="at main.go:62: calling [github.com/go-kratos/kratos/v2/config.WithSource]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "kratos-demo/cmd/kratos-demo.wireApp" [ tooltip="at main.go:77: calling [kratos-demo/cmd/kratos-demo.wireApp]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "(*github.com/go-kratos/kratos/v2/config.config).Scan" [ style="dashed" color="saddlebrown" tooltip="at main.go:73: calling [(*github.com/go-kratos/kratos/v2/config.config).Scan]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.ID" [ color="saddlebrown" tooltip="at main.go:38: calling [github.com/go-kratos/kratos/v2.ID]" ]
+    "kratos-demo/cmd/kratos-demo.newApp" -> "github.com/go-kratos/kratos/v2.Metadata" [ color="saddlebrown" tooltip="at main.go:41: calling [github.com/go-kratos/kratos/v2.Metadata]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "flag.Parse" [ color="saddlebrown" tooltip="at main.go:51: calling [flag.Parse]" ]
+    "kratos-demo/cmd/kratos-demo.main" -> "github.com/go-kratos/kratos/v2/middleware/tracing.TraceID" [ color="saddlebrown" tooltip="at main.go:58: calling [github.com/go-kratos/kratos/v2/middleware/tracing.TraceID]" ]
+}
